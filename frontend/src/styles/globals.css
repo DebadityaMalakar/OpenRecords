@@ -1,0 +1,541 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Bi Pride Palette - Deep Pastel */
+  --bi-pink: #D60270;
+  --bi-purple: #9B4F96;
+  --bi-blue: #0038A8;
+  
+  /* Derived Surfaces - Deepened Pastels */
+  --background: #0f0514;
+  --background-secondary: #1a0b24;
+  --background-tertiary: #251230;
+  
+  /* Text Colors */
+  --foreground: #f8e8f0;
+  --foreground-muted: #c9b8c4;
+  --foreground-subtle: #7a6a76;
+  
+  /* Accent System */
+  --accent-pink: #D60270;
+  --accent-pink-soft: #ff4da6;
+  --accent-purple: #9B4F96;
+  --accent-purple-soft: #c47fc0;
+  --accent-blue: #0038A8;
+  --accent-blue-soft: #4d7cff;
+  
+  /* Gradients */
+  --gradient-bi: linear-gradient(135deg, var(--bi-pink) 0%, var(--bi-purple) 50%, var(--bi-blue) 100%);
+  --gradient-bi-soft: linear-gradient(135deg, #ff4da6 0%, #c47fc0 50%, #4d7cff 100%);
+  --gradient-surface: linear-gradient(180deg, var(--background-secondary) 0%, var(--background) 100%);
+  
+  /* Functional Colors */
+  --border: rgba(155, 79, 150, 0.25);
+  --border-strong: rgba(155, 79, 150, 0.5);
+  --shadow-bi: 0 8px 32px rgba(214, 2, 112, 0.15), 0 4px 16px rgba(0, 56, 168, 0.15);
+  --glow-pink: 0 0 20px rgba(214, 2, 112, 0.4);
+  --glow-purple: 0 0 20px rgba(155, 79, 150, 0.4);
+  --glow-blue: 0 0 20px rgba(0, 56, 168, 0.4);
+
+  /* Typography Scale */
+  --font-size-display-xxl: 58px;
+  --font-size-display-xl: 52px;
+  --font-size-h1: 26px;
+  --font-size-h2: 16px;
+  --font-size-h3: 14px;
+  --font-size-body-large: 14px;
+  --font-size-body-base: 12px;
+  --font-size-body-small: 10px;
+  --font-size-ui: 12px;
+  --font-size-ui-small: 10px;
+  --font-size-code: 11px;
+
+  --line-height-display: 1.15;
+  --line-height-heading: 1.35;
+  --line-height-body: 1.65;
+  --line-height-ui: 1.45;
+  --line-height-code: 1.55;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+:root[data-theme="bi-dark"] {
+  --bi-pink: #D60270;
+  --bi-purple: #9B4F96;
+  --bi-blue: #0038A8;
+  --background: #0f0514;
+  --background-secondary: #1a0b24;
+  --background-tertiary: #251230;
+  --foreground: #f8e8f0;
+  --foreground-muted: #c9b8c4;
+  --foreground-subtle: #7a6a76;
+  --accent-pink: #D60270;
+  --accent-pink-soft: #ff4da6;
+  --accent-purple: #9B4F96;
+  --accent-purple-soft: #c47fc0;
+  --accent-blue: #0038A8;
+  --accent-blue-soft: #4d7cff;
+  --gradient-bi: linear-gradient(135deg, var(--bi-pink) 0%, var(--bi-purple) 50%, var(--bi-blue) 100%);
+  --gradient-bi-soft: linear-gradient(135deg, #ff4da6 0%, #c47fc0 50%, #4d7cff 100%);
+  --gradient-surface: linear-gradient(180deg, var(--background-secondary) 0%, var(--background) 100%);
+  --border: rgba(155, 79, 150, 0.25);
+  --border-strong: rgba(155, 79, 150, 0.5);
+  --shadow-bi: 0 8px 32px rgba(214, 2, 112, 0.15), 0 4px 16px rgba(0, 56, 168, 0.15);
+  --glow-pink: 0 0 20px rgba(214, 2, 112, 0.4);
+  --glow-purple: 0 0 20px rgba(155, 79, 150, 0.4);
+  --glow-blue: 0 0 20px rgba(0, 56, 168, 0.4);
+}
+
+:root[data-theme="bi-light"] {
+  --bi-pink: #D60270;
+  --bi-purple: #9B4F96;
+  --bi-blue: #0038A8;
+  --background: #faf5f7;
+  --background-secondary: #f0e6eb;
+  --background-tertiary: #e6d9e0;
+  --foreground: #1a0a14;
+  --foreground-muted: #5a4a54;
+  --foreground-subtle: #9a8a94;
+  --accent-pink: #D60270;
+  --accent-pink-soft: #ff4da6;
+  --accent-purple: #9B4F96;
+  --accent-purple-soft: #c47fc0;
+  --accent-blue: #0038A8;
+  --accent-blue-soft: #4d7cff;
+  --gradient-bi: linear-gradient(135deg, var(--bi-pink) 0%, var(--bi-purple) 50%, var(--bi-blue) 100%);
+  --gradient-bi-soft: linear-gradient(135deg, #ff4da6 0%, #c47fc0 50%, #4d7cff 100%);
+  --gradient-surface: linear-gradient(180deg, var(--background-secondary) 0%, var(--background) 100%);
+  --border: rgba(155, 79, 150, 0.2);
+  --border-strong: rgba(155, 79, 150, 0.4);
+  --shadow-bi: 0 4px 20px rgba(214, 2, 112, 0.1), 0 2px 8px rgba(0, 56, 168, 0.1);
+  --glow-pink: 0 0 16px rgba(214, 2, 112, 0.25);
+  --glow-purple: 0 0 16px rgba(155, 79, 150, 0.25);
+  --glow-blue: 0 0 16px rgba(0, 56, 168, 0.25);
+}
+
+:root[data-theme="mocha"] {
+  --bi-pink: #c08963;
+  --bi-purple: #a17fb8;
+  --bi-blue: #6fa2b5;
+  --background: #1e1b16;
+  --background-secondary: #2a241d;
+  --background-tertiary: #342c23;
+  --foreground: #f6efe8;
+  --foreground-muted: #c6b9ad;
+  --foreground-subtle: #8d8074;
+  --accent-pink: #c08963;
+  --accent-pink-soft: #ddb59a;
+  --accent-purple: #a17fb8;
+  --accent-purple-soft: #c1a4d3;
+  --accent-blue: #6fa2b5;
+  --accent-blue-soft: #9dc0cc;
+  --gradient-bi: linear-gradient(135deg, #c08963 0%, #a17fb8 55%, #6fa2b5 100%);
+  --gradient-bi-soft: linear-gradient(135deg, #ddb59a 0%, #c1a4d3 55%, #9dc0cc 100%);
+  --gradient-surface: linear-gradient(180deg, var(--background-secondary) 0%, var(--background) 100%);
+  --border: rgba(193, 164, 211, 0.25);
+  --border-strong: rgba(193, 164, 211, 0.45);
+  --shadow-bi: 0 10px 26px rgba(192, 137, 99, 0.18), 0 6px 18px rgba(111, 162, 181, 0.12);
+  --glow-pink: 0 0 18px rgba(192, 137, 99, 0.35);
+  --glow-purple: 0 0 18px rgba(161, 127, 184, 0.35);
+  --glow-blue: 0 0 18px rgba(111, 162, 181, 0.35);
+}
+
+:root[data-theme="matcha"] {
+  --bi-pink: #7fb77e;
+  --bi-purple: #9fc49c;
+  --bi-blue: #5c9f7c;
+  --background: #0f1712;
+  --background-secondary: #17211a;
+  --background-tertiary: #1e2b22;
+  --foreground: #e6f2e8;
+  --foreground-muted: #bcd4c0;
+  --foreground-subtle: #7e9a85;
+  --accent-pink: #7fb77e;
+  --accent-pink-soft: #a9d6a4;
+  --accent-purple: #9fc49c;
+  --accent-purple-soft: #c3e3bf;
+  --accent-blue: #5c9f7c;
+  --accent-blue-soft: #86c7a6;
+  --gradient-bi: linear-gradient(135deg, #7fb77e 0%, #9fc49c 55%, #5c9f7c 100%);
+  --gradient-bi-soft: linear-gradient(135deg, #a9d6a4 0%, #c3e3bf 55%, #86c7a6 100%);
+  --gradient-surface: linear-gradient(180deg, var(--background-secondary) 0%, var(--background) 100%);
+  --border: rgba(159, 196, 156, 0.25);
+  --border-strong: rgba(159, 196, 156, 0.45);
+  --shadow-bi: 0 10px 26px rgba(127, 183, 126, 0.18), 0 6px 18px rgba(92, 159, 124, 0.12);
+  --glow-pink: 0 0 18px rgba(127, 183, 126, 0.35);
+  --glow-purple: 0 0 18px rgba(159, 196, 156, 0.35);
+  --glow-blue: 0 0 18px rgba(92, 159, 124, 0.35);
+}
+
+:root[data-theme="nord"] {
+  --bi-pink: #bf616a;
+  --bi-purple: #b48ead;
+  --bi-blue: #5e81ac;
+  --background: #2e3440;
+  --background-secondary: #3b4252;
+  --background-tertiary: #434c5e;
+  --foreground: #eceff4;
+  --foreground-muted: #d8dee9;
+  --foreground-subtle: #8a95a5;
+  --accent-pink: #bf616a;
+  --accent-pink-soft: #d08770;
+  --accent-purple: #b48ead;
+  --accent-purple-soft: #c8a8c2;
+  --accent-blue: #5e81ac;
+  --accent-blue-soft: #81a1c1;
+  --gradient-bi: linear-gradient(135deg, #bf616a 0%, #b48ead 55%, #5e81ac 100%);
+  --gradient-bi-soft: linear-gradient(135deg, #d08770 0%, #c8a8c2 55%, #81a1c1 100%);
+  --gradient-surface: linear-gradient(180deg, var(--background-secondary) 0%, var(--background) 100%);
+  --border: rgba(180, 142, 173, 0.25);
+  --border-strong: rgba(180, 142, 173, 0.45);
+  --shadow-bi: 0 10px 26px rgba(94, 129, 172, 0.18), 0 6px 18px rgba(191, 97, 106, 0.12);
+  --glow-pink: 0 0 18px rgba(191, 97, 106, 0.35);
+  --glow-purple: 0 0 18px rgba(180, 142, 173, 0.35);
+  --glow-blue: 0 0 18px rgba(94, 129, 172, 0.35);
+}
+
+:root[data-theme="gruvbox"] {
+  --bi-pink: #d65d0e;
+  --bi-purple: #b16286;
+  --bi-blue: #458588;
+  --background: #1d2021;
+  --background-secondary: #282828;
+  --background-tertiary: #32302f;
+  --foreground: #ebdbb2;
+  --foreground-muted: #d5c4a1;
+  --foreground-subtle: #a89984;
+  --accent-pink: #d65d0e;
+  --accent-pink-soft: #fe8019;
+  --accent-purple: #b16286;
+  --accent-purple-soft: #d3869b;
+  --accent-blue: #458588;
+  --accent-blue-soft: #83a598;
+  --gradient-bi: linear-gradient(135deg, #d65d0e 0%, #b16286 55%, #458588 100%);
+  --gradient-bi-soft: linear-gradient(135deg, #fe8019 0%, #d3869b 55%, #83a598 100%);
+  --gradient-surface: linear-gradient(180deg, var(--background-secondary) 0%, var(--background) 100%);
+  --border: rgba(177, 98, 134, 0.25);
+  --border-strong: rgba(177, 98, 134, 0.45);
+  --shadow-bi: 0 10px 26px rgba(214, 93, 14, 0.18), 0 6px 18px rgba(69, 133, 136, 0.12);
+  --glow-pink: 0 0 18px rgba(214, 93, 14, 0.35);
+  --glow-purple: 0 0 18px rgba(177, 98, 134, 0.35);
+  --glow-blue: 0 0 18px rgba(69, 133, 136, 0.35);
+}
+
+@theme inline {
+  /* Base */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Extended Surfaces */
+  --color-bg-secondary: var(--background-secondary);
+  --color-bg-tertiary: var(--background-tertiary);
+  
+  /* Text Scale */
+  --color-text: var(--foreground);
+  --color-text-muted: var(--foreground-muted);
+  --color-text-subtle: var(--foreground-subtle);
+  
+  /* Accents */
+  --color-pink: var(--accent-pink);
+  --color-pink-soft: var(--accent-pink-soft);
+  --color-purple: var(--accent-purple);
+  --color-purple-soft: var(--accent-purple-soft);
+  --color-blue: var(--accent-blue);
+  --color-blue-soft: var(--accent-blue-soft);
+  
+  /* Borders & Effects */
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  
+  /* Fonts */
+  --font-sans: "Open Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --background: #faf5f7;
+    --background-secondary: #f0e6eb;
+    --background-tertiary: #e6d9e0;
+    
+    --foreground: #1a0a14;
+    --foreground-muted: #5a4a54;
+    --foreground-subtle: #9a8a94;
+    
+    --border: rgba(155, 79, 150, 0.2);
+    --border-strong: rgba(155, 79, 150, 0.4);
+    --shadow-bi: 0 4px 20px rgba(214, 2, 112, 0.1), 0 2px 8px rgba(0, 56, 168, 0.1);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-heading);
+  font-weight: var(--font-weight-semibold);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+button,
+input,
+select,
+textarea {
+  font-size: var(--font-size-ui);
+  line-height: var(--line-height-ui);
+}
+
+label,
+.text-label,
+.text-caption,
+.text-badge {
+  font-size: var(--font-size-ui-small);
+  line-height: var(--line-height-ui);
+}
+
+/* Open Sans weight utilities */
+.font-light { font-weight: 300; }
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+
+/* IBM Plex Mono specific styling */
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-code);
+}
+
+/* Utility Classes for Bi Theme */
+@layer utilities {
+  .bi-gradient {
+    background: var(--gradient-bi);
+  }
+  
+  .bi-gradient-text {
+    background: var(--gradient-bi);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bi-glow {
+    box-shadow: var(--shadow-bi);
+  }
+  
+  .bi-border {
+    border: 1px solid var(--border);
+  }
+  
+  .bi-border-strong {
+    border: 1px solid var(--border-strong);
+  }
+  
+  .surface-secondary {
+    background: var(--background-secondary);
+  }
+  
+  .surface-tertiary {
+    background: var(--background-tertiary);
+  }
+  
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* ── Markdown body styles ── */
+
+.markdown-body {
+  font-size: var(--font-size-body-base);
+  line-height: var(--line-height-body);
+  color: var(--foreground);
+  word-wrap: break-word;
+}
+
+/* Headings */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  color: var(--foreground);
+}
+.markdown-body h1 { font-size: var(--font-size-h1); }
+.markdown-body h2 { font-size: var(--font-size-h2); }
+.markdown-body h3 { font-size: var(--font-size-h3); }
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 { font-size: var(--font-size-body-base); }
+.markdown-body h1:first-child,
+.markdown-body h2:first-child,
+.markdown-body h3:first-child { margin-top: 0; }
+
+/* Paragraphs & spacing */
+.markdown-body p {
+  margin: 0.6em 0;
+}
+.markdown-body p:first-child { margin-top: 0; }
+.markdown-body p:last-child { margin-bottom: 0; }
+
+/* Links */
+.markdown-body a {
+  color: var(--accent-purple-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+.markdown-body a:hover {
+  color: var(--accent-pink-soft);
+}
+
+/* Bold / italic */
+.markdown-body strong { font-weight: 700; color: var(--foreground); }
+.markdown-body em { font-style: italic; }
+
+/* Lists */
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+.markdown-body ul { list-style: disc; }
+.markdown-body ol { list-style: decimal; }
+.markdown-body li { margin: 0.2em 0; }
+.markdown-body li > p { margin: 0.25em 0; }
+
+/* Task lists (GFM) */
+.markdown-body ul:has(> li > input[type="checkbox"]) {
+  list-style: none;
+  padding-left: 0.5em;
+}
+.markdown-body li > input[type="checkbox"] {
+  margin-right: 0.4em;
+  accent-color: var(--accent-purple-soft);
+}
+
+/* Blockquotes */
+.markdown-body blockquote {
+  margin: 0.75em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid var(--accent-purple-soft);
+  background: var(--background-tertiary);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: var(--foreground-muted);
+}
+.markdown-body blockquote p { margin: 0.25em 0; }
+
+/* Inline code */
+.markdown-body code:not(pre code) {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-code);
+  padding: 0.15em 0.35em;
+  border-radius: 0.3rem;
+  background: var(--background-tertiary);
+  border: 1px solid var(--border);
+  color: var(--accent-pink-soft);
+}
+
+/* Code blocks */
+.markdown-body pre {
+  margin: 0.75em 0;
+  padding: 1em;
+  border-radius: 0.6rem;
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  font-size: var(--font-size-code);
+  line-height: var(--line-height-code);
+}
+.markdown-body pre code {
+  font-family: var(--font-mono);
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--foreground);
+}
+
+/* Tables (GFM) */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  font-size: 0.8rem;
+}
+.markdown-body th,
+.markdown-body td {
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.markdown-body th {
+  font-weight: 600;
+  background: var(--background-tertiary);
+  color: var(--foreground-muted);
+}
+.markdown-body tr:nth-child(even) {
+  background: var(--background-secondary);
+}
+
+/* Horizontal rules */
+.markdown-body hr {
+  margin: 1em 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* Images */
+.markdown-body img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin: 0.5em 0;
+}
+
+/* Strikethrough (GFM) */
+.markdown-body del {
+  color: var(--foreground-subtle);
+  text-decoration: line-through;
+}
+
+/* ── rehype-highlight syntax theme (dark) ── */
+.markdown-body .hljs { background: transparent; color: var(--foreground); }
+.markdown-body .hljs-keyword,
+.markdown-body .hljs-selector-tag { color: var(--accent-pink-soft); }
+.markdown-body .hljs-string,
+.markdown-body .hljs-attr { color: #a6e3a1; }
+.markdown-body .hljs-number,
+.markdown-body .hljs-literal { color: #fab387; }
+.markdown-body .hljs-built_in,
+.markdown-body .hljs-type { color: var(--accent-blue-soft); }
+.markdown-body .hljs-comment { color: var(--foreground-subtle); font-style: italic; }
+.markdown-body .hljs-title,
+.markdown-body .hljs-function { color: var(--accent-purple-soft); }
+.markdown-body .hljs-variable,
+.markdown-body .hljs-params { color: var(--foreground-muted); }
+.markdown-body .hljs-meta { color: #f9e2af; }
+.markdown-body .hljs-regexp { color: #f38ba8; }
+.markdown-body .hljs-tag { color: var(--accent-blue-soft); }
+.markdown-body .hljs-name { color: var(--accent-pink-soft); }
+.markdown-body .hljs-attribute { color: var(--accent-purple-soft); }

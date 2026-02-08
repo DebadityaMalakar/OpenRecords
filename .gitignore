@@ -1,0 +1,42 @@
+.conda/
+
+# Node / frontend
+node_modules/
+.next/
+out/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Python / backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+backend/Lib/
+backend/Scripts/
+backend/pyvenv.cfg
+
+# Local data
+backend/data/*.db
+backend/data/vectors/
+backend/vault/encrypted_files/
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db

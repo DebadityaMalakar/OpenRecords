@@ -1,0 +1,40 @@
+# OpenRecords Backend Requirements
+
+# Framework
+fastapi>=0.128.0
+uvicorn[standard]>=0.30.0
+
+# Database
+python-multipart>=0.0.9
+
+# Authentication & Security
+argon2-cffi>=23.1.0
+pyjwt>=2.8.0
+cryptography>=42.0.0
+
+# Validation
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+email-validator>=2.1.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# OpenRouter AI
+openrouter>=0.6.0
+httpx>=0.27.0
+
+# File Parsing
+PyMuPDF>=1.24.0
+python-docx>=1.1.0
+markdown>=3.6
+
+# Web Scraping & Sanitization
+beautifulsoup4>=4.12.0
+bleach>=6.1.0
+
+# Chunking & Embeddings
+tiktoken>=0.7.0
+
+# Vector DB
+numpy>=2.0.0
